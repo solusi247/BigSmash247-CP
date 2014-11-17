@@ -144,6 +144,7 @@ namespace BigSmash247
                 labelYARN.BackColor = Color.LightGreen;
                 btnStartYARN.Enabled = false;
                 btnStopYARN.Enabled = true;
+                linkLabelYARN.Visible = true;
             }
             else
             {
@@ -151,6 +152,7 @@ namespace BigSmash247
                 labelYARN.BackColor = Color.Salmon;
                 btnStartYARN.Enabled = true;
                 btnStopYARN.Enabled = false;
+                linkLabelYARN.Visible = false;
             }
         }
 
@@ -166,6 +168,7 @@ namespace BigSmash247
                 labelHDFS.BackColor = Color.LightGreen;
                 btnStartHDFS.Enabled = false;
                 btnStopHDFS.Enabled = true;
+                linkLabelHDFS.Visible = true;
             }
             else
             {
@@ -173,6 +176,7 @@ namespace BigSmash247
                 labelHDFS.BackColor = Color.Salmon;
                 btnStartHDFS.Enabled = true;
                 btnStopHDFS.Enabled = false;
+                linkLabelHDFS.Visible = false;
             }
             // YARN (ResourceManager & NodeManager)
             string res3 = checkDaemons("ResourceManager");
@@ -183,6 +187,7 @@ namespace BigSmash247
                 labelYARN.BackColor = Color.LightGreen;
                 btnStartYARN.Enabled = false;
                 btnStopYARN.Enabled = true;
+                linkLabelYARN.Visible = true;
             }
             else
             {
@@ -190,6 +195,7 @@ namespace BigSmash247
                 labelYARN.BackColor = Color.Salmon;
                 btnStartYARN.Enabled = true;
                 btnStopYARN.Enabled = false;
+                linkLabelYARN.Visible = false;
             }
             // ZooKeeper
             string res5 = checkDaemons("org.apache.zookeeper.server.quorum.QuorumPeerMain");
@@ -217,6 +223,7 @@ namespace BigSmash247
                 labelStorm.BackColor = Color.LightGreen;
                 btnStartStorm.Enabled = false;
                 btnStopStorm.Enabled = true;
+                linkLabelStorm.Visible = true;
             }
             else
             {
@@ -224,6 +231,7 @@ namespace BigSmash247
                 labelStorm.BackColor = Color.Salmon;
                 btnStartStorm.Enabled = true;
                 btnStopStorm.Enabled = false;
+                linkLabelStorm.Visible = false;
             }
             // Spark Daemons (Master, Worker)
             string res9 = checkDaemons("org.apache.spark.deploy.master.Master");
@@ -234,6 +242,7 @@ namespace BigSmash247
                 labelSpark.BackColor = Color.LightGreen;
                 btnStartSpark.Enabled = false;
                 btnStopSpark.Enabled = true;
+                linkLabelSpark.Visible = true;
             }
             else
             {
@@ -241,6 +250,7 @@ namespace BigSmash247
                 labelSpark.BackColor = Color.Salmon;
                 btnStartSpark.Enabled = true;
                 btnStopSpark.Enabled = false;
+                linkLabelSpark.Visible = false;
             }
         }
 
@@ -378,6 +388,7 @@ namespace BigSmash247
                 labelHDFS.BackColor = Color.LightGreen;
                 btnStartHDFS.Enabled = false;
                 btnStopHDFS.Enabled = true;
+                linkLabelHDFS.Visible = true;
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -392,6 +403,7 @@ namespace BigSmash247
                 labelHDFS.BackColor = Color.Salmon;
                 btnStartHDFS.Enabled = true;
                 btnStopHDFS.Enabled = false;
+                linkLabelHDFS.Visible = false;
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -416,6 +428,7 @@ namespace BigSmash247
                     labelYARN.BackColor = Color.LightGreen;
                     btnStartYARN.Enabled = false;
                     btnStopYARN.Enabled = true;
+                    linkLabelYARN.Visible = true;
                     Cursor.Current = Cursors.Default;
                 }
             }
@@ -431,6 +444,7 @@ namespace BigSmash247
                 labelYARN.BackColor = Color.Salmon;
                 btnStartYARN.Enabled = true;
                 btnStopYARN.Enabled = false;
+                linkLabelYARN.Visible = false;
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -526,6 +540,7 @@ namespace BigSmash247
                     labelStorm.BackColor = Color.LightGreen;
                     btnStartStorm.Enabled = false;
                     btnStopStorm.Enabled = true;
+                    linkLabelStorm.Visible = true;
                     Cursor.Current = Cursors.Default;
                 }
             }
@@ -547,6 +562,7 @@ namespace BigSmash247
                 labelStorm.BackColor = Color.Salmon;
                 btnStartStorm.Enabled = true;
                 btnStopStorm.Enabled = false;
+                linkLabelStorm.Visible = false;
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -563,6 +579,7 @@ namespace BigSmash247
                 labelSpark.BackColor = Color.LightGreen;
                 btnStartSpark.Enabled = false;
                 btnStopSpark.Enabled = true;
+                linkLabelSpark.Visible = true;
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -579,6 +596,7 @@ namespace BigSmash247
                 labelSpark.BackColor = Color.Salmon;
                 btnStartSpark.Enabled = true;
                 btnStopSpark.Enabled = false;
+                linkLabelSpark.Visible = false;
                 Cursor.Current = Cursors.Default;
             }
         }
@@ -610,6 +628,26 @@ namespace BigSmash247
                 groupBox3.Enabled = true;
                 checkDaemonsStatus();
             }
+        }
+
+        private void linkLabelHDFS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {            
+            Process.Start(linkLabelHDFS.Text);
+        }
+
+        private void linkLabelYARN_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(linkLabelYARN.Text);
+        }
+
+        private void linkLabelStorm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(linkLabelStorm.Text);
+        }
+
+        private void linkLabelSpark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(linkLabelSpark.Text);
         }
     }
 }

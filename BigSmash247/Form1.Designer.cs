@@ -60,6 +60,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnApplyMode = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.linkLabelHDFS = new System.Windows.Forms.LinkLabel();
+            this.linkLabelYARN = new System.Windows.Forms.LinkLabel();
+            this.linkLabelStorm = new System.Windows.Forms.LinkLabel();
+            this.linkLabelSpark = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,6 +72,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLabelYARN);
+            this.groupBox1.Controls.Add(this.linkLabelHDFS);
             this.groupBox1.Controls.Add(this.btnStopYARN);
             this.groupBox1.Controls.Add(this.btnStopHDFS);
             this.groupBox1.Controls.Add(this.btnStartYARN);
@@ -79,7 +85,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 85);
+            this.groupBox1.Size = new System.Drawing.Size(354, 87);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hadoop";
@@ -98,7 +104,7 @@
             // btnStopHDFS
             // 
             this.btnStopHDFS.Enabled = false;
-            this.btnStopHDFS.Location = new System.Drawing.Point(274, 21);
+            this.btnStopHDFS.Location = new System.Drawing.Point(274, 16);
             this.btnStopHDFS.Name = "btnStopHDFS";
             this.btnStopHDFS.Size = new System.Drawing.Size(75, 23);
             this.btnStopHDFS.TabIndex = 6;
@@ -120,7 +126,7 @@
             // 
             this.labelYARN.AutoSize = true;
             this.labelYARN.BackColor = System.Drawing.Color.Salmon;
-            this.labelYARN.Location = new System.Drawing.Point(99, 55);
+            this.labelYARN.Location = new System.Drawing.Point(85, 55);
             this.labelYARN.Name = "labelYARN";
             this.labelYARN.Size = new System.Drawing.Size(29, 13);
             this.labelYARN.TabIndex = 4;
@@ -137,7 +143,7 @@
             // 
             // btnStartHDFS
             // 
-            this.btnStartHDFS.Location = new System.Drawing.Point(196, 21);
+            this.btnStartHDFS.Location = new System.Drawing.Point(196, 16);
             this.btnStartHDFS.Name = "btnStartHDFS";
             this.btnStartHDFS.Size = new System.Drawing.Size(75, 23);
             this.btnStartHDFS.TabIndex = 2;
@@ -149,7 +155,7 @@
             // 
             this.labelHDFS.AutoSize = true;
             this.labelHDFS.BackColor = System.Drawing.Color.Salmon;
-            this.labelHDFS.Location = new System.Drawing.Point(99, 26);
+            this.labelHDFS.Location = new System.Drawing.Point(85, 21);
             this.labelHDFS.Name = "labelHDFS";
             this.labelHDFS.Size = new System.Drawing.Size(29, 13);
             this.labelHDFS.TabIndex = 1;
@@ -158,7 +164,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 26);
+            this.label1.Location = new System.Drawing.Point(18, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 0;
@@ -197,6 +203,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.linkLabelStorm);
             this.groupBox2.Controls.Add(this.btnStopStorm);
             this.groupBox2.Controls.Add(this.btnStopZoo);
             this.groupBox2.Controls.Add(this.btnStartStorm);
@@ -205,9 +212,9 @@
             this.groupBox2.Controls.Add(this.btnStartZoo);
             this.groupBox2.Controls.Add(this.labelZoo);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(4, 127);
+            this.groupBox2.Location = new System.Drawing.Point(4, 133);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(354, 85);
+            this.groupBox2.Size = new System.Drawing.Size(354, 86);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Storm";
@@ -226,7 +233,7 @@
             // btnStopZoo
             // 
             this.btnStopZoo.Enabled = false;
-            this.btnStopZoo.Location = new System.Drawing.Point(274, 21);
+            this.btnStopZoo.Location = new System.Drawing.Point(274, 18);
             this.btnStopZoo.Name = "btnStopZoo";
             this.btnStopZoo.Size = new System.Drawing.Size(75, 23);
             this.btnStopZoo.TabIndex = 6;
@@ -248,7 +255,7 @@
             // 
             this.labelStorm.AutoSize = true;
             this.labelStorm.BackColor = System.Drawing.Color.Salmon;
-            this.labelStorm.Location = new System.Drawing.Point(99, 55);
+            this.labelStorm.Location = new System.Drawing.Point(85, 55);
             this.labelStorm.Name = "labelStorm";
             this.labelStorm.Size = new System.Drawing.Size(29, 13);
             this.labelStorm.TabIndex = 4;
@@ -265,7 +272,7 @@
             // 
             // btnStartZoo
             // 
-            this.btnStartZoo.Location = new System.Drawing.Point(196, 21);
+            this.btnStartZoo.Location = new System.Drawing.Point(196, 18);
             this.btnStartZoo.Name = "btnStartZoo";
             this.btnStartZoo.Size = new System.Drawing.Size(75, 23);
             this.btnStartZoo.TabIndex = 2;
@@ -277,7 +284,7 @@
             // 
             this.labelZoo.AutoSize = true;
             this.labelZoo.BackColor = System.Drawing.Color.Salmon;
-            this.labelZoo.Location = new System.Drawing.Point(99, 26);
+            this.labelZoo.Location = new System.Drawing.Point(85, 23);
             this.labelZoo.Name = "labelZoo";
             this.labelZoo.Size = new System.Drawing.Size(29, 13);
             this.labelZoo.TabIndex = 1;
@@ -286,7 +293,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 26);
+            this.label6.Location = new System.Drawing.Point(18, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 0;
@@ -294,11 +301,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.linkLabelSpark);
             this.groupBox3.Controls.Add(this.btnStopSpark);
             this.groupBox3.Controls.Add(this.btnStartSpark);
             this.groupBox3.Controls.Add(this.labelSpark);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(4, 216);
+            this.groupBox3.Location = new System.Drawing.Point(4, 222);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(354, 59);
             this.groupBox3.TabIndex = 9;
@@ -308,7 +316,7 @@
             // btnStopSpark
             // 
             this.btnStopSpark.Enabled = false;
-            this.btnStopSpark.Location = new System.Drawing.Point(274, 21);
+            this.btnStopSpark.Location = new System.Drawing.Point(274, 19);
             this.btnStopSpark.Name = "btnStopSpark";
             this.btnStopSpark.Size = new System.Drawing.Size(75, 23);
             this.btnStopSpark.TabIndex = 6;
@@ -318,7 +326,7 @@
             // 
             // btnStartSpark
             // 
-            this.btnStartSpark.Location = new System.Drawing.Point(196, 21);
+            this.btnStartSpark.Location = new System.Drawing.Point(196, 19);
             this.btnStartSpark.Name = "btnStartSpark";
             this.btnStartSpark.Size = new System.Drawing.Size(75, 23);
             this.btnStartSpark.TabIndex = 2;
@@ -330,7 +338,7 @@
             // 
             this.labelSpark.AutoSize = true;
             this.labelSpark.BackColor = System.Drawing.Color.Salmon;
-            this.labelSpark.Location = new System.Drawing.Point(99, 26);
+            this.labelSpark.Location = new System.Drawing.Point(85, 24);
             this.labelSpark.Name = "labelSpark";
             this.labelSpark.Size = new System.Drawing.Size(29, 13);
             this.labelSpark.TabIndex = 1;
@@ -339,7 +347,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 26);
+            this.label10.Location = new System.Drawing.Point(18, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 0;
@@ -375,6 +383,54 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 21);
             this.comboBox1.TabIndex = 13;
+            // 
+            // linkLabelHDFS
+            // 
+            this.linkLabelHDFS.AutoSize = true;
+            this.linkLabelHDFS.Location = new System.Drawing.Point(83, 35);
+            this.linkLabelHDFS.Name = "linkLabelHDFS";
+            this.linkLabelHDFS.Size = new System.Drawing.Size(113, 13);
+            this.linkLabelHDFS.TabIndex = 8;
+            this.linkLabelHDFS.TabStop = true;
+            this.linkLabelHDFS.Text = "http://localhost:50070";
+            this.linkLabelHDFS.Visible = false;
+            this.linkLabelHDFS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHDFS_LinkClicked);
+            // 
+            // linkLabelYARN
+            // 
+            this.linkLabelYARN.AutoSize = true;
+            this.linkLabelYARN.Location = new System.Drawing.Point(83, 69);
+            this.linkLabelYARN.Name = "linkLabelYARN";
+            this.linkLabelYARN.Size = new System.Drawing.Size(107, 13);
+            this.linkLabelYARN.TabIndex = 9;
+            this.linkLabelYARN.TabStop = true;
+            this.linkLabelYARN.Text = "http://localhost:8088";
+            this.linkLabelYARN.Visible = false;
+            this.linkLabelYARN.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelYARN_LinkClicked);
+            // 
+            // linkLabelStorm
+            // 
+            this.linkLabelStorm.AutoSize = true;
+            this.linkLabelStorm.Location = new System.Drawing.Point(83, 69);
+            this.linkLabelStorm.Name = "linkLabelStorm";
+            this.linkLabelStorm.Size = new System.Drawing.Size(107, 13);
+            this.linkLabelStorm.TabIndex = 8;
+            this.linkLabelStorm.TabStop = true;
+            this.linkLabelStorm.Text = "http://localhost:8080";
+            this.linkLabelStorm.Visible = false;
+            this.linkLabelStorm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStorm_LinkClicked);
+            // 
+            // linkLabelSpark
+            // 
+            this.linkLabelSpark.AutoSize = true;
+            this.linkLabelSpark.Location = new System.Drawing.Point(83, 38);
+            this.linkLabelSpark.Name = "linkLabelSpark";
+            this.linkLabelSpark.Size = new System.Drawing.Size(107, 13);
+            this.linkLabelSpark.TabIndex = 7;
+            this.linkLabelSpark.TabStop = true;
+            this.linkLabelSpark.Text = "http://localhost:8000";
+            this.linkLabelSpark.Visible = false;
+            this.linkLabelSpark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSpark_LinkClicked);
             // 
             // Form1
             // 
@@ -439,5 +495,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnApplyMode;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.LinkLabel linkLabelYARN;
+        private System.Windows.Forms.LinkLabel linkLabelHDFS;
+        private System.Windows.Forms.LinkLabel linkLabelStorm;
+        private System.Windows.Forms.LinkLabel linkLabelSpark;
     }
 }
