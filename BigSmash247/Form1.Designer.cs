@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabelYARN = new System.Windows.Forms.LinkLabel();
+            this.linkLabelHDFS = new System.Windows.Forms.LinkLabel();
             this.btnStopYARN = new System.Windows.Forms.Button();
             this.btnStopHDFS = new System.Windows.Forms.Button();
             this.btnStartYARN = new System.Windows.Forms.Button();
@@ -44,6 +46,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabelStorm = new System.Windows.Forms.LinkLabel();
             this.btnStopStorm = new System.Windows.Forms.Button();
             this.btnStopZoo = new System.Windows.Forms.Button();
             this.btnStartStorm = new System.Windows.Forms.Button();
@@ -53,6 +56,7 @@
             this.labelZoo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.linkLabelSpark = new System.Windows.Forms.LinkLabel();
             this.btnStopSpark = new System.Windows.Forms.Button();
             this.btnStartSpark = new System.Windows.Forms.Button();
             this.labelSpark = new System.Windows.Forms.Label();
@@ -60,10 +64,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnApplyMode = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.linkLabelHDFS = new System.Windows.Forms.LinkLabel();
-            this.linkLabelYARN = new System.Windows.Forms.LinkLabel();
-            this.linkLabelStorm = new System.Windows.Forms.LinkLabel();
-            this.linkLabelSpark = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,6 +89,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hadoop";
+            // 
+            // linkLabelYARN
+            // 
+            this.linkLabelYARN.AutoSize = true;
+            this.linkLabelYARN.Location = new System.Drawing.Point(83, 69);
+            this.linkLabelYARN.Name = "linkLabelYARN";
+            this.linkLabelYARN.Size = new System.Drawing.Size(107, 13);
+            this.linkLabelYARN.TabIndex = 9;
+            this.linkLabelYARN.TabStop = true;
+            this.linkLabelYARN.Text = "http://localhost:8088";
+            this.linkLabelYARN.Visible = false;
+            this.linkLabelYARN.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelYARN_LinkClicked);
+            // 
+            // linkLabelHDFS
+            // 
+            this.linkLabelHDFS.AutoSize = true;
+            this.linkLabelHDFS.Location = new System.Drawing.Point(83, 35);
+            this.linkLabelHDFS.Name = "linkLabelHDFS";
+            this.linkLabelHDFS.Size = new System.Drawing.Size(113, 13);
+            this.linkLabelHDFS.TabIndex = 8;
+            this.linkLabelHDFS.TabStop = true;
+            this.linkLabelHDFS.Text = "http://localhost:50070";
+            this.linkLabelHDFS.Visible = false;
+            this.linkLabelHDFS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHDFS_LinkClicked);
             // 
             // btnStopYARN
             // 
@@ -219,6 +243,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Storm";
             // 
+            // linkLabelStorm
+            // 
+            this.linkLabelStorm.AutoSize = true;
+            this.linkLabelStorm.Location = new System.Drawing.Point(83, 69);
+            this.linkLabelStorm.Name = "linkLabelStorm";
+            this.linkLabelStorm.Size = new System.Drawing.Size(107, 13);
+            this.linkLabelStorm.TabIndex = 8;
+            this.linkLabelStorm.TabStop = true;
+            this.linkLabelStorm.Text = "http://localhost:8080";
+            this.linkLabelStorm.Visible = false;
+            this.linkLabelStorm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStorm_LinkClicked);
+            // 
             // btnStopStorm
             // 
             this.btnStopStorm.Enabled = false;
@@ -313,6 +349,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Other";
             // 
+            // linkLabelSpark
+            // 
+            this.linkLabelSpark.AutoSize = true;
+            this.linkLabelSpark.Location = new System.Drawing.Point(83, 38);
+            this.linkLabelSpark.Name = "linkLabelSpark";
+            this.linkLabelSpark.Size = new System.Drawing.Size(107, 13);
+            this.linkLabelSpark.TabIndex = 7;
+            this.linkLabelSpark.TabStop = true;
+            this.linkLabelSpark.Text = "http://localhost:8000";
+            this.linkLabelSpark.Visible = false;
+            this.linkLabelSpark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSpark_LinkClicked);
+            // 
             // btnStopSpark
             // 
             this.btnStopSpark.Enabled = false;
@@ -383,54 +431,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 21);
             this.comboBox1.TabIndex = 13;
-            // 
-            // linkLabelHDFS
-            // 
-            this.linkLabelHDFS.AutoSize = true;
-            this.linkLabelHDFS.Location = new System.Drawing.Point(83, 35);
-            this.linkLabelHDFS.Name = "linkLabelHDFS";
-            this.linkLabelHDFS.Size = new System.Drawing.Size(113, 13);
-            this.linkLabelHDFS.TabIndex = 8;
-            this.linkLabelHDFS.TabStop = true;
-            this.linkLabelHDFS.Text = "http://localhost:50070";
-            this.linkLabelHDFS.Visible = false;
-            this.linkLabelHDFS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHDFS_LinkClicked);
-            // 
-            // linkLabelYARN
-            // 
-            this.linkLabelYARN.AutoSize = true;
-            this.linkLabelYARN.Location = new System.Drawing.Point(83, 69);
-            this.linkLabelYARN.Name = "linkLabelYARN";
-            this.linkLabelYARN.Size = new System.Drawing.Size(107, 13);
-            this.linkLabelYARN.TabIndex = 9;
-            this.linkLabelYARN.TabStop = true;
-            this.linkLabelYARN.Text = "http://localhost:8088";
-            this.linkLabelYARN.Visible = false;
-            this.linkLabelYARN.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelYARN_LinkClicked);
-            // 
-            // linkLabelStorm
-            // 
-            this.linkLabelStorm.AutoSize = true;
-            this.linkLabelStorm.Location = new System.Drawing.Point(83, 69);
-            this.linkLabelStorm.Name = "linkLabelStorm";
-            this.linkLabelStorm.Size = new System.Drawing.Size(107, 13);
-            this.linkLabelStorm.TabIndex = 8;
-            this.linkLabelStorm.TabStop = true;
-            this.linkLabelStorm.Text = "http://localhost:8080";
-            this.linkLabelStorm.Visible = false;
-            this.linkLabelStorm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStorm_LinkClicked);
-            // 
-            // linkLabelSpark
-            // 
-            this.linkLabelSpark.AutoSize = true;
-            this.linkLabelSpark.Location = new System.Drawing.Point(83, 38);
-            this.linkLabelSpark.Name = "linkLabelSpark";
-            this.linkLabelSpark.Size = new System.Drawing.Size(107, 13);
-            this.linkLabelSpark.TabIndex = 7;
-            this.linkLabelSpark.TabStop = true;
-            this.linkLabelSpark.Text = "http://localhost:8000";
-            this.linkLabelSpark.Visible = false;
-            this.linkLabelSpark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSpark_LinkClicked);
             // 
             // Form1
             // 
